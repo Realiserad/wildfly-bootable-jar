@@ -61,6 +61,7 @@
 
             <layer>h2-datasource</layer>
             <layer>mariadb-datasource</layer>
+            <layer>mssql-datasource</layer>
           </layers>
           <excluded-layers>
             <layer>messaging-activemq</layer>
