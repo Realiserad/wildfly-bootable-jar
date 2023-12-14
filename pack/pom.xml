@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.keyfactor</groupId>
+  <artifactId>wildfly-galleon-pack</artifactId>
+  <version>latest</version>
+
+  <properties>
+    <version.galleon-pack>26.1.3.Final</version.galleon-pack>
+    <version.galleon-maven-plugin>6.5.3.Final</version.galleon-maven-plugin>
+    <version.mariadb-driver>3.3.1</version.mariadb-driver>
+  </properties>
+
+  <packaging>pom</packaging>
+  <name>wildfly-galleon-pack</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.wildfly</groupId>
+      <artifactId>wildfly-galleon-pack</artifactId>
+      <version>${version.galleon-pack}</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>org.wildfly.galleon-plugins</groupId>
+      <artifactId>wildfly-galleon-maven-plugin</artifactId>
+      <version>${version.galleon-maven-plugin}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mariadb.jdbc</groupId>
+      <artifactId>mariadb-java-client</artifactId>
+      <version>${version.mariadb-driver}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.wildfly.galleon-plugins</groupId>
+        <artifactId>wildfly-galleon-maven-plugin</artifactId>
+        <version>${version.galleon-maven-plugin}</version>
+
+        <executions>
+          <execution>
+            <id>wildfly-galleon-pack</id>
+            <goals>
+              <goal>build-user-feature-pack</goal>
+            </goals>
+            <phase>compile</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

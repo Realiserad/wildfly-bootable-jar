@@ -1,0 +1,15 @@
+/subsystem=logging/logger=org.ejbca:add(level=${env.LOG_LEVEL:WARN})
+/subsystem=logging/logger=org.signserver:add(level=${env.LOG_LEVEL:WARN})
+
+/subsystem=logging/logger=org.cesecore:add(level=${env.LOG_LEVEL:WARN})
+/subsystem=logging/logger=com.keyfactor:add(level=${env.LOG_LEVEL:WARN})
+
+/subsystem=logging/logger=org.cesecore.audit.impl.log4j.Log4jDevice:add(level=INFO)
+
+/subsystem=logging/logger=org.jboss.as.config:write-attribute(name=level, value=WARN)
+/subsystem=logging/logger=org.jboss:add(level=WARN)
+/subsystem=logging/logger=org.wildfly:add(level=WARN)
+/subsystem=logging/logger=org.xnio:add(level=WARN)
+/subsystem=logging/logger=org.hibernate:add(level=WARN)
+/subsystem=logging/logger=org.apache.cxf:add(level=WARN)
+/subsystem=logging/logger=org.cesecore.config.ConfigurationHolder:add(level=WARN)

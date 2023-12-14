@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.keyfactor</groupId>
+  <artifactId>wildfly</artifactId>
+  <version>30.0.1.Final</version>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.wildfly.plugins</groupId>
+        <artifactId>wildfly-jar-maven-plugin</artifactId>
+        <configuration>
+          <feature-packs>
+            <feature-pack>
+              <groupId>org.wildfly</groupId>
+              <artifactId>wildfly-galleon-pack</artifactId>
+              <version>${project.version}</version>
+            </feature-pack>
+            <feature-pack>
+              <groupId>com.keyfactor</groupId>
+              <artifactId>wildfly-galleon-pack</artifactId>
+              <version>latest</version>
+            </feature-pack>
+          </feature-packs>
+
+          <cli-sessions>
+            <cli-session>
+                <script-files>
+                    <script>scripts/loggers.cli</script>
+                </script-files>
+                <resolve-expressions>false</resolve-expressions>
+            </cli-session>
+          </cli-sessions>
+
+          <hollow-jar>true</hollow-jar>
+
+          <layers>
+            <layer>datasources</layer>
+            <layer>cdi</layer>
+            <layer>deployment-scanner</layer>
+            <layer>discovery</layer>
+            <layer>ee</layer>
+            <layer>ejb</layer>
+            <layer>io</layer>
+            <layer>jaxrs</layer>
+            <layer>jpa</layer>
+            <layer>jsf</layer>
+            <layer>logging</layer>
+            <layer>mail</layer>
+            <layer>management</layer>
+            <layer>webservices</layer>
+
+            <layer>mariadb-datasource</layer>
+          </layers>
+          <excluded-layers>
+            <layer>messaging-activemq</layer>
+            <layer>jsonb</layer>
+          </excluded-layers>
+
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>package</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
