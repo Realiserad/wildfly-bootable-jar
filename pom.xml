@@ -59,6 +59,7 @@
             <layer>management</layer>
             <layer>webservices</layer>
 
+            <layer>h2-datasource</layer>
             <layer>mariadb-datasource</layer>
           </layers>
           <excluded-layers>
