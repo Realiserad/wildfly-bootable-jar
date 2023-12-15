@@ -50,12 +50,10 @@
             <layer>ee</layer>
             <layer>ejb</layer>
             <layer>io</layer>
-            <layer>jaxrs</layer>
             <layer>jpa</layer>
             <layer>jsf</layer>
             <layer>logging</layer>
             <layer>mail</layer>
-            <layer>management</layer>
             <layer>webservices</layer>
 
             <layer>h2-datasource</layer>
