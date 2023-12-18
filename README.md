@@ -14,6 +14,6 @@ The repository ships with a `Dockerfile` which you can use to build and run the
 application server.
 
 ```fish
-docker build --network=host -t (whoami)/(basename (echo "$PWD")) .
+docker build -t (whoami)/(basename (echo "$PWD")) .
 docker run (whoami)/(basename (echo "$PWD")) --version
 ```
