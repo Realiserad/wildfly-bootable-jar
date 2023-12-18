@@ -52,6 +52,7 @@
             <layer>io</layer>
             <layer>jpa</layer>
             <layer>jsf</layer>
+            <layer>jaxrs</layer>
             <layer>logging</layer>
             <layer>mail</layer>
             <layer>webservices</layer>
