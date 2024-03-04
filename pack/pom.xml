@@ -7,7 +7,7 @@
   <version>latest</version>
 
   <properties>
-    <version.galleon-pack>31.0.0.Final</version.galleon-pack>
+    <version.galleon-pack>31.0.1.Final</version.galleon-pack>
     <version.galleon-maven-plugin>6.5.4.Final</version.galleon-maven-plugin>
     <version.mariadb-driver>3.3.1</version.mariadb-driver>
     <version.mssql-driver>11.2.3.jre17</version.mssql-driver>
